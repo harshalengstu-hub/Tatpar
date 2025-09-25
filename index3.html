@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatpar BRT - Bus Seva</title>
+    <!-- Use Google Fonts for the 'Inter' font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+
+        /* Custom style for the main content area background */
+        .content-bg {
+            background-color: #f0f4f8;
+        }
+
+        /* Custom style for the GIF box */
+        .gif-placeholder {
+            min-width: 300px;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1-px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Hide all pages initially except for the home page */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        /* Custom button style for the Google Play button */
+        .play-store-button {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .play-store-button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="content-bg">
+
+    <!-- Header Section -->
+    <header class="bg-green-800 text-white p-4 md:p-6 shadow-md rounded-b-xl w-full">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <!-- Logo and Slogan -->
+            <div class="flex items-center space-x-4">
+                <!-- Using a placeholder image for the logo -->
+                <img src="./your-logo.png" alt="Tatpar BRT Logo" class="h-32 w-auto">
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-wide">Tatpar - BRT Lite bus seva</h1>
+                    <p class="text-sm md:text-base italic mt-1 opacity-90">Runs By Nava Raipur Atal Nagar Vikas Pradhikaran</p>
+                </div>
+            </div>
+            <!-- Navigation Tabs -->
+            <nav class="w-full md:w-auto">
+                <ul class="flex flex-wrap justify-center space-x-2 md:space-x-4">
+                    <li><button data-page="home" class="nav-tab text-white py-2 px-4 rounded-full hover:bg-green-700 transition-colors">Home</button></li>
+                    <li><button data-page="about" class="nav-tab text-white py-2 px-4 rounded-full hover:bg-green-700 transition-colors">About Us</button></li>
+                    <li><button data-page="route" class="nav-tab text-white py-2 px-4 rounded-full hover:bg-green-700 transition-colors">Route Map</button></li>
+                    <li><button data-page="fare" class="nav-tab text-white py-2 px-4 rounded-full hover:bg-green-700 transition-colors">Fare Calculator</button></li>
+                    <li><button data-page="explore" class="nav-tab text-white py-2 px-4 rounded-full hover:bg-green-700 transition-colors">Places To Explore</button></li>
+                    <li><button data-page="contact" class="nav-tab text-white py-2 px-4 rounded-full hover:bg-green-700 transition-colors">Connect us</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto p-4 md:p-8">
+
+        <!-- Home Page Content -->
+        <section id="home" class="page-content active">
+            <div class="bg-green-800 text-white p-8 md:p-12 rounded-xl shadow-lg">
+                <div class="flex flex-col items-center justify-center gap-8 md:gap-16">
+                    <!-- Updated path for the animated bus GIF -->
+                    <div class="gif-placeholder w-full h-auto aspect-video">
+                       <!-- This URL is a placeholder. Replace it with your actual Imgur GIF URL. -->
+                       <img src="https://i.imgur.com/your_bus_simulation.gif" alt="Tatpar BRT Bus Simulation" class="rounded-xl w-full h-full object-cover">
+                    </div>
+                    <!-- Taglines -->
+                    <div class="flex-1 text-center space-y-4">
+                        <p class="text-lg font-semibold">"Safe, Sustainable, and Smart Transit."</p>
+                        <p class="text-lg font-semibold">"Experience the Future of Public Transport."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-green-800 text-white p-8 md:p-12 rounded-xl shadow-lg mt-8">
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
+                    <!-- Updated path for the app GIF -->
+                    <div class="w-full lg:w-1/3">
+                        <!-- This URL is a placeholder. Replace it with your actual Imgur PNG URL. -->
+                        <img src="https://i.imgur.com/your_app_preview.png" alt="Tatpar BRT App" class="w-full h-auto rounded-xl shadow-lg">
+                    </div>
+                    <!-- App Information -->
+                    <div class="w-full lg:w-2/3 text-center lg:text-left space-y-4">
+                        <h2 class="text-3xl md:text-4xl font-bold">Download the Tatpar BRT App</h2>
+                        <p class="text-md md:text-lg">Stay updated with real-time bus locations, fare details, and route information. Our app is designed to make your daily commute effortless and convenient.</p>
+                        <!-- Google Play Store Button -->
+                        <a href="https://play.google.com/store/apps/details?id=com.tatparbrt.app" target="_blank" rel="noopener noreferrer" class="inline-block play-store-button">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="h-16 w-auto">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Page -->
+        <section id="about" class="page-content p-8 rounded-xl bg-white shadow-lg text-gray-700">
+            <h2 class="text-3xl font-bold text-green-800 mb-4">About Us</h2>
+            <p class="mb-4">Nava Raipur Atal Nagar Vikas Pradhikaran (NRANVP), envisioned as the capital of Chhattisgarh after it attained statehood on 1st November 2000, is located 24 km from Raipur. As a satellite city, it offers a blank slate for planned urban development, including sustainable and inclusive urban transport systems.</p>
+            <p class="mb-4">Urban transport demand emerged with the relocation of the State Secretariat and Government offices in 2013. Residential development in four key sectors followed, with the population gradually increasing. Current transport demand is characterized by commuting patterns between Raipur, Nava Raipur Atal Nagar, and nearby towns, especially during peak AM and PM hours. A more uniform intra-city transport demand is expected as the city matures with operational social, commercial, and healthcare facilities, and more residents settle in.</p>
+            <p class="mb-4">BRT Lite Nava Raipur Atal Nagar named “Tatpar” was launched by Hon’ble Prime Minister on 1st November 2016. The BRT infrastructure are unique in design and quality of construction is high. The BRT buses are BS-IV compliant, fully AC, and Ultra-Modern in look and performance with automatic transmission. They are also IT-equipped with features like CCTV surveillance for enhanced safety and route information displays for a seamless travel experience. The Buses operate at every 15 minute frequency at peak hours and at every 30 minute frequency at peak hours from 6.00 AM to 10.00 PM. The fleet size comprises of 30 nos. USB-II compliant AC BRT Buses which ply in mixed traffic in Raipur and in soft marked corridor in Nava Raipur Atal Nagar. The Buses have RFID assisted docking facilities in the median shelters and also have facilities for kerb side boarding. The Buses and Shelters have CCTV Surveillance System. The buses and the shelters allow barrier free movement of wheel chairs. Fare Matrix is competitive with that of Non AC Buses so as to keep it affordable and accessible to all section of riders. The operation is successful with Zero Accident System. The design and construction of cycle track and pedestrian pathway and crossings are made such that especially abled persons can easily use them. The project has a vital role to implement Nava Raipur Atal Nagar vision of ‘Mobility of all, affordable, equitable and safe’.</p>
+            <p class="mb-4">The BRTS Lite System ensures seamless multi-modal connectivity across the city. The BRT routes are strategically planned to connect major transit hubs, including Raipur Railway Station at Raipur, CBD Railway Station at Nava Raipur Atal Nagar, and inter-state bus stops along NH-30 and NH-53. Additionally, the system enhances last-mile connectivity to residential and commercial sectors through e-Autos and a Public Bicycle Sharing (PBS) network, promoting efficient and sustainable urban mobility.</p>
+            
+            <h3 class="text-2xl font-bold text-green-800 mt-6 mb-2">Key infrastructure details:</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left table-auto border-collapse">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="p-2 border border-gray-300">Sr. No</th>
+                            <th class="p-2 border border-gray-300">Headline</th>
+                            <th class="p-2 border border-gray-300">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-2 border border-gray-300">1</td>
+                            <td class="p-2 border border-gray-300">BRT Corridors – 2 nos.</td>
+                            <td class="p-2 border border-gray-300">A. Corridor 1: Raipur Railway Station – NH 53 – Capitol Complex Nava Raipur Atal Nagar (24.70 km)<br>B. Corridor 3: Along the Main East-West Axis of Nava Raipur Atal Nagar Connecting NH 53 & NH 30 (17.80 km) Corridor 2 is city bus corridor.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-gray-300">2</td>
+                            <td class="p-2 border border-gray-300">Number of BRT Bus Stations:</td>
+                            <td class="p-2 border border-gray-300">Pick-up Point (2 nos)<br>BRTS Shelter (8 nos)<br>Feeder Stops (25 nos)<br>New BRTS Shelter - under construction (9 nos)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-gray-300">3</td>
+                            <td class="p-2 border border-gray-300">Bus Depot</td>
+                            <td class="p-2 border border-gray-300">Paved Parking Space (Capacity – 100 Buses)<br>Work Shop (1 nos.) including 4 maintenance pits and automated bus was machine.<br>ITS Control and Command Centre</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-gray-300">4</td>
+                            <td class="p-2 border border-gray-300">AC Standard BRT Buses</td>
+                            <td class="p-2 border border-gray-300">Tata Marco-Polo UBS-II complaint, Diesel Propellant AC BRTS Buses. (30 nos.)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-gray-300">5</td>
+                            <td class="p-2 border border-gray-300">Pedestrian Walkway:</td>
+                            <td class="p-2 border border-gray-300">City has 28.93 km of Pedestrian Walkway</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-gray-300">6</td>
+                            <td class="p-2 border border-gray-300">Cycle Track</td>
+                            <td class="p-2 border border-gray-300">City has 38.01 km of Cycle Track</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-gray-300">7</td>
+                            <td class="p-2 border border-gray-300">Table Top Crossing</td>
+                            <td class="p-2 border border-gray-300">City has 2.78 km of Table Top Crossing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="text-2xl font-bold text-green-800 mt-6 mb-2">Features that Make Travel Convenient</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li><span class="font-bold">01 Buses:</span> Over 30 AC buses with doors on both sides and more standing space, that ply smoothly and rapidly in reserved lanes.</li>
+                <li><span class="font-bold">02 Bus stations in the BRT Lanes:</span> Covered and provide protection from rain and sun, well lit, have a ramp at the entrance and signage boards with information about the BRT corridors.</li>
+                <li><span class="font-bold">03 Tickets at stations:</span> The ticket is to be bought at the ticket counter through ETMs (Cash or UPI) inside the station before boarding the bus.</li>
+                <li><span class="font-bold">04 Level Boarding:</span> The height of the bus platform and the BRT station platform are at the same level. Passengers do not have to climb steps to board the bus, a feature similar to metro rail.</li>
+                <li><span class="font-bold">05 Automatic Doors:</span> Automatic doors on BRT stations and bus doors open only when the bus is properly docked at the station.</li>
+                <li><span class="font-bold">06 Crossings:</span> The crossings from the footpath to the BRT stations have signals in many locations or have speed tables so that vehicles have to slow down to allow passengers to cross safely.</li>
+                <li><span class="font-bold">07 Bus Numbers, Bus Arrival and Station Information:</span> <br>i. Display screens and audio announcements in buses give information about the next stop<br>ii. Route numbers appear on LED displays on the front, back and the left side of buses</li>
+                <li><span class="font-bold">08 Intelligent Transit Management System:</span> BRT Buses have GPS and all buses and stations are linked with the BRTS Control Room which tracks bus movement and gives feedback to drivers to improve service.</li>
+                <li><span class="font-bold">09 Smooth Ride & Convenient Journey:</span> Our buses are designed for a smooth and comfortable journey, allowing you to relax and enjoy the ride.</li>
+                <li><span class="font-bold">10 Panoramic Views:</span> Large glass windows offer passengers a panoramic view, allowing them to enjoy the lush greenery of Nava Raipur during their commute.</li>
+                <li><span class="font-bold">11 Enhanced Safety:</span> An SOS button is installed inside the buses for immediate assistance in case of an emergency.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-green-800 mt-6 mb-2">Benefits of Tatpar BRT</h3>
+            <p class="mb-4">The Tatpar BRTS is being developed as the sustainable public transport option for Raipur to Nava Raipur Atal Nagar and within Nava Raipur Atal Nagar. The rapid increase in vehicular traffic, increased congestion, expanded city limits and longer travel distances are some important trends in the twin cities. A high quality public transport is essential to avoid adverse impacts on the health of people and quality of life.</p>
+            <p class="mb-4">BRTS system is developed for safe, affordable with the focus on commuter comfort and convenience, integration of modes and information technology. These would help move towards a livable and sustainable future.</p>
+            <p class="mb-4">Tatpar BRTS aims to provide a few immediate benefits to passengers – Comfortable ride on the BRTS buses, with shorter waiting times and shorter travel time. The long term benefits to Nava Raipur Atal Nagar urban areas expected are:</p>
+            <ul class="list-disc list-inside space-y-1">
+                <li>Reduced pollution from motor vehicles</li>
+                <li>Reduced congestion due to motor vehicles</li>
+                <li>Reduced spending on infrastructure for motor vehicles such as flyovers, parking lots</li>
+                <li>Increased economic activity due to improved connectivity</li>
+            </ul>
+        </section>
+
+        <!-- Route Map Page -->
+        <section id="route" class="page-content p-8 rounded-xl bg-white shadow-lg text-gray-700">
+            <h2 class="text-3xl font-bold text-green-800 mb-4">Route Map</h2>
+            <!-- Updated path for the route map GIF -->
+            <div class="flex justify-center items-center w-full aspect-video">
+                <!-- This URL is a placeholder. Replace it with your actual Imgur PNG URL. -->
+                <img src="https://i.imgur.com/your_route_map.png" alt="Tatpar BRT Route Map" class="rounded-xl w-full h-auto object-cover shadow-lg">
+            </div>
+        </section>
+
+        <!-- Fare Calculator Page -->
+        <section id="fare" class="page-content p-8 rounded-xl bg-white shadow-lg">
+            <h2 class="text-3xl font-bold text-green-800 mb-4">Fare Calculator</h2>
+            <div class="space-y-6">
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="w-full md:w-1/2">
+                        <label for="source-stop" class="block text-gray-700 font-semibold mb-2">Source:</label>
+                        <select id="source-stop" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors">
+                            <option value="">Select Source Stop</option>
+                        </select>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <label for="destination-stop" class="block text-sm font-semibold text-gray-700 mb-2">Destination:</label>
+                        <select id="destination-stop" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors">
+                            <option value="">Select Destination Stop</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <button id="calculate-fare-btn" class="bg-green-800 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-700 transition-colors flex items-center space-x-2">
+                        <span>Calculate Fare</span>
+                        <span>₹</span>
+                    </button>
+                </div>
+                <div id="fare-result" class="text-center text-2xl font-bold mt-6 text-green-800">
+                    <!-- Fare will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Places To Explore Page -->
+        <section id="explore" class="page-content p-8 rounded-xl bg-white shadow-lg">
+            <h2 class="text-3xl font-bold text-green-800 mb-4">Places To Explore</h2>
+            <p class="text-gray-700">Discover key landmarks, tourist attractions, and popular destinations accessible via our bus routes. This section will feature guides and information to help you explore the city with ease.</p>
+        </section>
+
+        <!-- Connect us Page -->
+        <section id="contact" class="page-content p-8 rounded-xl bg-white shadow-lg">
+            <h2 class="text-3xl font-bold text-green-800 mb-4">Connect us</h2>
+            <p class="text-gray-700">We value your feedback and are here to help. Please use the form below to get in touch with us.</p>
+            
+            <form id="contact-form" class="space-y-6 mt-6">
+                <!-- Name Field -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring focus:ring-green-500 focus:ring-opacity-50" required>
+                </div>
+
+                <!-- Contact Number Field -->
+                <div>
+                    <label for="contact-number" class="block text-sm font-medium text-gray-700">Contact Number</label>
+                    <input type="tel" id="contact-number" name="contact-number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring focus:ring-green-500 focus:ring-opacity-50" required>
+                </div>
+
+                <!-- Email Id Field -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Id</label>
+                    <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring focus:ring-green-500 focus:ring-opacity-50" required>
+                </div>
+
+                <!-- Feedback/Complaint Box -->
+                <div>
+                    <label for="feedback" class="block text-sm font-medium text-gray-700">Feedback/Complaint (300 words max)</label>
+                    <textarea id="feedback" name="feedback" rows="6" maxlength="1500" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring focus:ring-green-500 focus:ring-opacity-50" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex justify-center">
+                    <button type="submit" class="bg-green-800 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-700 transition-colors">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-green-800 text-white p-4 text-center mt-8 rounded-t-xl shadow-md">
+        <div class="mt-4 border-t border-green-700 pt-4">
+            <p class="text-sm">Download our app for real-time bus schedules. Plan your journey smarter and faster!</p>
+            <p class="text-sm mt-2">&copy; All Rights Reserved | SRIT India</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Page Navigation and Fare Calculator -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navTabs = document.querySelectorAll('.nav-tab');
+            const pageContents = document.querySelectorAll('.page-content');
+            const sourceStopSelect = document.getElementById('source-stop');
+            const destinationStopSelect = document.getElementById('destination-stop');
+            const calculateBtn = document.getElementById('calculate-fare-btn');
+            const fareResultDiv = document.getElementById('fare-result');
+            const contactForm = document.getElementById('contact-form');
+
+            // Fare data from the provided CSV file
+            const fareData = {
+                "Raipur Railway Station": {
+                    "Raipur Railway Station": 0, "DKS Bhawan": 5, "Telibandha": 10, "Agriculture College": 15, "Sector 15": 30, "CBD": 30, "Ekatm path": 30, "North Block": 30, "Mahanadi Bhawan": 40, "Indravati Bhawan": 40, "South Block": 40, "Sector 27": 40, "Sector 29": 40, "Sector 30": 40, "IIM": 45, "HNLU": 40, "Nawagaon": 45, "Military Station": 45, "Stadium": 45, "Satya Sai Hospital": 40, "Sector 17": 30, "Balco Medical Centre": 40, "Jungle Safari": 45, "HNLU gate": 45, "IIIT": 40, "Muktangan": 45, "Sector 22": 30, "CBD Railway Station": 30, "Office Complex Block A B": 30, "Mantri Aawas": 40, "Rakhi village": 40, "Sector 27-29 Mid": 40, "Rawatpura Sarkar University": 45, "Thanaud": 45, "NH 30 Chowk": 45
+                },
+                "DKS Bhawan": {
+                    "Raipur Railway Station": 5, "DKS Bhawan": 0, "Telibandha": 5, "Agriculture College": 10, "Sector 15": 25, "CBD": 30, "Ekatm path": 30, "North Block": 30, "Mahanadi Bhawan": 30, "Indravati Bhawan": 30, "South Block": 30, "Sector 27": 30, "Sector 29": 30, "Sector 30": 40, "IIM": 45, "HNLU": 40, "Nawagaon": 45, "Military Station": 40, "Stadium": 40, "Satya Sai Hospital": 40, "Sector 17": 30, "Balco Medical Centre": 40, "Jungle Safari": 40, "HNLU gate": 40, "IIIT": 40, "Muktangan": 40, "Sector 22": 30, "CBD Railway Station": 30, "Office Complex Block A B": 30, "Mantri Aawas": 40, "Rakhi village": 40, "Sector 27-29 Mid": 40, "Rawatpura Sarkar University": 40, "Thanaud": 40, "NH 30 Chowk": 40
+                },
+                "Telibandha": {
+                    "Raipur Railway Station": 10, "DKS Bhawan": 5, "Telibandha": 0, "Agriculture College": 5, "Sector 15": 20, "CBD": 25, "Ekatm path": 25, "North Block": 25, "Mahanadi Bhawan": 30, "Indravati Bhawan": 30, "South Block": 30, "Sector 27": 30, "Sector 29": 30, "Sector 30": 30, "IIM": 35, "HNLU": 30, "Nawagaon": 35, "Military Station": 35, "Stadium": 35, "Satya Sai Hospital": 30, "Sector 17": 25, "Balco Medical Centre": 30, "Jungle Safari": 35, "HNLU gate": 35, "IIIT": 30, "Muktangan": 35, "Sector 22": 25, "CBD Railway Station": 25, "Office Complex Block A B": 25, "Mantri Aawas": 30, "Rakhi village": 30, "Sector 27-29 Mid": 30, "Rawatpura Sarkar University": 35, "Thanaud": 35, "NH 30 Chowk": 35
+                },
+                "Agriculture College": {
+                    "Raipur Railway Station": 15, "DKS Bhawan": 10, "Telibandha": 5, "Agriculture College": 0, "Sector 15": 15, "CBD": 20, "Ekatm path": 20, "North Block": 20, "Mahanadi Bhawan": 25, "Indravati Bhawan": 25, "South Block": 25, "Sector 27": 25, "Sector 29": 25, "Sector 30": 25, "IIM": 30, "HNLU": 25, "Nawagaon": 30, "Military Station": 30, "Stadium": 30, "Satya Sai Hospital": 25, "Sector 17": 20, "Balco Medical Centre": 25, "Jungle Safari": 30, "HNLU gate": 30, "IIIT": 25, "Muktangan": 30, "Sector 22": 20, "CBD Railway Station": 20, "Office Complex Block A B": 20, "Mantri Aawas": 25, "Rakhi village": 25, "Sector 27-29 Mid": 25, "Rawatpura Sarkar University": 30, "Thanaud": 30, "NH 30 Chowk": 30
+                },
+                "Sector 15": {
+                    "Raipur Railway Station": 30, "DKS Bhawan": 25, "Telibandha": 20, "Agriculture College": 15, "Sector 15": 0, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 10, "Sector 30": 10, "IIM": 15, "HNLU": 10, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 5, "Balco Medical Centre": 15, "Jungle Safari": 20, "HNLU gate": 20, "IIIT": 15, "Muktangan": 20, "Sector 22": 5, "CBD Railway Station": 5, "Office Complex Block A B": 5, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 15, "Thanaud": 15, "NH 30 Chowk": 15
+                },
+                "CBD": {
+                    "Raipur Railway Station": 30, "DKS Bhawan": 30, "Telibandha": 25, "Agriculture College": 20, "Sector 15": 5, "CBD": 0, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 5, "Indravati Bhawan": 5, "South Block": 5, "Sector 27": 5, "Sector 29": 5, "Sector 30": 5, "IIM": 10, "HNLU": 5, "Nawagaon": 10, "Military Station": 10, "Stadium": 10, "Satya Sai Hospital": 5, "Sector 17": 5, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 15, "Sector 22": 5, "CBD Railway Station": 5, "Office Complex Block A B": 5, "Mantri Aawas": 5, "Rakhi village": 5, "Sector 27-29 Mid": 5, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Ekatm path": {
+                    "Raipur Railway Station": 30, "DKS Bhawan": 30, "Telibandha": 25, "Agriculture College": 20, "Sector 15": 5, "CBD": 5, "Ekatm path": 0, "North Block": 5, "Mahanadi Bhawan": 5, "Indravati Bhawan": 5, "South Block": 5, "Sector 27": 5, "Sector 29": 5, "Sector 30": 5, "IIM": 10, "HNLU": 5, "Nawagaon": 10, "Military Station": 10, "Stadium": 10, "Satya Sai Hospital": 5, "Sector 17": 5, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 15, "Sector 22": 5, "CBD Railway Station": 5, "Office Complex Block A B": 5, "Mantri Aawas": 5, "Rakhi village": 5, "Sector 27-29 Mid": 5, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "North Block": {
+                    "Raipur Railway Station": 30, "DKS Bhawan": 30, "Telibandha": 25, "Agriculture College": 20, "Sector 15": 5, "CBD": 5, "Ekatm path": 5, "North Block": 0, "Mahanadi Bhawan": 5, "Indravati Bhawan": 5, "South Block": 5, "Sector 27": 5, "Sector 29": 5, "Sector 30": 5, "IIM": 10, "HNLU": 5, "Nawagaon": 10, "Military Station": 10, "Stadium": 10, "Satya Sai Hospital": 5, "Sector 17": 5, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 15, "Sector 22": 5, "CBD Railway Station": 5, "Office Complex Block A B": 5, "Mantri Aawas": 5, "Rakhi village": 5, "Sector 27-29 Mid": 5, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Mahanadi Bhawan": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 30, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 0, "Indravati Bhawan": 5, "South Block": 5, "Sector 27": 5, "Sector 29": 5, "Sector 30": 10, "IIM": 10, "HNLU": 10, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 15, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 5, "Rakhi village": 5, "Sector 27-29 Mid": 5, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Indravati Bhawan": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 30, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 5, "Indravati Bhawan": 0, "South Block": 5, "Sector 27": 5, "Sector 29": 5, "Sector 30": 10, "IIM": 10, "HNLU": 10, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 15, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 5, "Rakhi village": 5, "Sector 27-29 Mid": 5, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "South Block": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 30, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 5, "Indravati Bhawan": 5, "South Block": 0, "Sector 27": 5, "Sector 29": 5, "Sector 30": 10, "IIM": 10, "HNLU": 10, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 15, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 5, "Rakhi village": 5, "Sector 27-29 Mid": 5, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Sector 27": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 30, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 5, "Indravati Bhawan": 5, "South Block": 5, "Sector 27": 0, "Sector 29": 5, "Sector 30": 5, "IIM": 10, "HNLU": 10, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 15, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 5, "Rakhi village": 5, "Sector 27-29 Mid": 5, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Sector 29": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 30, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 5, "Indravati Bhawan": 5, "South Block": 5, "Sector 27": 5, "Sector 29": 0, "Sector 30": 5, "IIM": 10, "HNLU": 5, "Nawagaon": 10, "Military Station": 10, "Stadium": 10, "Satya Sai Hospital": 5, "Sector 17": 5, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 15, "Sector 22": 5, "CBD Railway Station": 5, "Office Complex Block A B": 5, "Mantri Aawas": 5, "Rakhi village": 5, "Sector 27-29 Mid": 5, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Sector 30": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 40, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 5, "Sector 29": 5, "Sector 30": 0, "IIM": 15, "HNLU": 15, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 15, "Sector 17": 10, "Balco Medical Centre": 15, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 15, "Thanaud": 15, "NH 30 Chowk": 15
+                },
+                "IIM": {
+                    "Raipur Railway Station": 45, "DKS Bhawan": 45, "Telibandha": 35, "Agriculture College": 30, "Sector 15": 15, "CBD": 10, "Ekatm path": 10, "North Block": 10, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 10, "Sector 30": 15, "IIM": 0, "HNLU": 10, "Nawagaon": 25, "Military Station": 25, "Stadium": 25, "Satya Sai Hospital": 10, "Sector 17": 15, "Balco Medical Centre": 25, "Jungle Safari": 25, "HNLU gate": 25, "IIIT": 20, "Muktangan": 25, "Sector 22": 15, "CBD Railway Station": 15, "Office Complex Block A B": 15, "Mantri Aawas": 15, "Rakhi village": 15, "Sector 27-29 Mid": 15, "Rawatpura Sarkar University": 20, "Thanaud": 20, "NH 30 Chowk": 20
+                },
+                "HNLU": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 40, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 5, "Sector 30": 15, "IIM": 10, "HNLU": 0, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 5, "Sector 17": 5, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 15, "Sector 22": 5, "CBD Railway Station": 5, "Office Complex Block A B": 5, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 15, "Thanaud": 15, "NH 30 Chowk": 15
+                },
+                "Nawagaon": {
+                    "Raipur Railway Station": 45, "DKS Bhawan": 45, "Telibandha": 35, "Agriculture College": 30, "Sector 15": 15, "CBD": 10, "Ekatm path": 10, "North Block": 10, "Mahanadi Bhawan": 15, "Indravati Bhawan": 15, "South Block": 15, "Sector 27": 15, "Sector 29": 10, "Sector 30": 15, "IIM": 25, "HNLU": 15, "Nawagaon": 0, "Military Station": 5, "Stadium": 5, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 15, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 15, "Rakhi village": 15, "Sector 27-29 Mid": 15, "Rawatpura Sarkar University": 20, "Thanaud": 20, "NH 30 Chowk": 20
+                },
+                "Military Station": {
+                    "Raipur Railway Station": 45, "DKS Bhawan": 40, "Telibandha": 35, "Agriculture College": 30, "Sector 15": 15, "CBD": 10, "Ekatm path": 10, "North Block": 10, "Mahanadi Bhawan": 15, "Indravati Bhawan": 15, "South Block": 15, "Sector 27": 15, "Sector 29": 10, "Sector 30": 15, "IIM": 25, "HNLU": 15, "Nawagaon": 5, "Military Station": 0, "Stadium": 5, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 15, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 15, "Rakhi village": 15, "Sector 27-29 Mid": 15, "Rawatpura Sarkar University": 20, "Thanaud": 20, "NH 30 Chowk": 20
+                },
+                "Stadium": {
+                    "Raipur Railway Station": 45, "DKS Bhawan": 40, "Telibandha": 35, "Agriculture College": 30, "Sector 15": 15, "CBD": 10, "Ekatm path": 10, "North Block": 10, "Mahanadi Bhawan": 15, "Indravati Bhawan": 15, "South Block": 15, "Sector 27": 15, "Sector 29": 10, "Sector 30": 15, "IIM": 25, "HNLU": 15, "Nawagaon": 5, "Military Station": 5, "Stadium": 0, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 15, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 15, "Rakhi village": 15, "Sector 27-29 Mid": 15, "Rawatpura Sarkar University": 20, "Thanaud": 20, "NH 30 Chowk": 20
+                },
+                "Satya Sai Hospital": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 40, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 5, "Sector 30": 15, "IIM": 10, "HNLU": 5, "Nawagaon": 10, "Military Station": 10, "Stadium": 10, "Satya Sai Hospital": 0, "Sector 17": 5, "Balco Medical Centre": 5, "Jungle Safari": 10, "HNLU gate": 10, "IIIT": 5, "Muktangan": 10, "Sector 22": 5, "CBD Railway Station": 5, "Office Complex Block A B": 5, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Sector 17": {
+                    "Raipur Railway Station": 30, "DKS Bhawan": 30, "Telibandha": 25, "Agriculture College": 20, "Sector 15": 5, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 5, "Sector 30": 10, "IIM": 15, "HNLU": 5, "Nawagaon": 10, "Military Station": 10, "Stadium": 10, "Satya Sai Hospital": 5, "Sector 17": 0, "Balco Medical Centre": 5, "Jungle Safari": 10, "HNLU gate": 10, "IIIT": 5, "Muktangan": 10, "Sector 22": 5, "CBD Railway Station": 5, "Office Complex Block A B": 5, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Balco Medical Centre": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 40, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 15, "CBD": 10, "Ekatm path": 10, "North Block": 10, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 10, "Sector 30": 15, "IIM": 25, "HNLU": 10, "Nawagaon": 10, "Military Station": 10, "Stadium": 10, "Satya Sai Hospital": 5, "Sector 17": 5, "Balco Medical Centre": 0, "Jungle Safari": 5, "HNLU gate": 5, "IIIT": 5, "Muktangan": 5, "Sector 22": 5, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Jungle Safari": {
+                    "Raipur Railway Station": 45, "DKS Bhawan": 40, "Telibandha": 35, "Agriculture College": 30, "Sector 15": 20, "CBD": 15, "Ekatm path": 15, "North Block": 15, "Mahanadi Bhawan": 15, "Indravati Bhawan": 15, "South Block": 15, "Sector 27": 15, "Sector 29": 15, "Sector 30": 15, "IIM": 25, "HNLU": 15, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 5, "Jungle Safari": 0, "HNLU gate": 5, "IIIT": 10, "Muktangan": 5, "Sector 22": 10, "CBD Railway Station": 15, "Office Complex Block A B": 15, "Mantri Aawas": 15, "Rakhi village": 15, "Sector 27-29 Mid": 15, "Rawatpura Sarkar University": 15, "Thanaud": 15, "NH 30 Chowk": 15
+                },
+                "HNLU gate": {
+                    "Raipur Railway Station": 45, "DKS Bhawan": 40, "Telibandha": 35, "Agriculture College": 30, "Sector 15": 20, "CBD": 15, "Ekatm path": 15, "North Block": 15, "Mahanadi Bhawan": 15, "Indravati Bhawan": 15, "South Block": 15, "Sector 27": 15, "Sector 29": 15, "Sector 30": 15, "IIM": 25, "HNLU": 15, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 5, "Jungle Safari": 5, "HNLU gate": 0, "IIIT": 5, "Muktangan": 5, "Sector 22": 10, "CBD Railway Station": 15, "Office Complex Block A B": 15, "Mantri Aawas": 15, "Rakhi village": 15, "Sector 27-29 Mid": 15, "Rawatpura Sarkar University": 15, "Thanaud": 15, "NH 30 Chowk": 15
+                },
+                "IIIT": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 40, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 15, "CBD": 10, "Ekatm path": 10, "North Block": 10, "Mahanadi Bhawan": 15, "Indravati Bhawan": 15, "South Block": 15, "Sector 27": 15, "Sector 29": 10, "Sector 30": 10, "IIM": 20, "HNLU": 10, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 5, "Sector 17": 5, "Balco Medical Centre": 5, "Jungle Safari": 10, "HNLU gate": 5, "IIIT": 0, "Muktangan": 5, "Sector 22": 5, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 15, "Rakhi village": 15, "Sector 27-29 Mid": 15, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Muktangan": {
+                    "Raipur Railway Station": 45, "DKS Bhawan": 40, "Telibandha": 35, "Agriculture College": 30, "Sector 15": 20, "CBD": 15, "Ekatm path": 15, "North Block": 15, "Mahanadi Bhawan": 15, "Indravati Bhawan": 15, "South Block": 15, "Sector 27": 15, "Sector 29": 15, "Sector 30": 15, "IIM": 25, "HNLU": 15, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 5, "Jungle Safari": 5, "HNLU gate": 5, "IIIT": 5, "Muktangan": 0, "Sector 22": 5, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 15, "Rakhi village": 15, "Sector 27-29 Mid": 15, "Rawatpura Sarkar University": 15, "Thanaud": 15, "NH 30 Chowk": 15
+                },
+                "Sector 22": {
+                    "Raipur Railway Station": 30, "DKS Bhawan": 30, "Telibandha": 25, "Agriculture College": 20, "Sector 15": 5, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 5, "Sector 30": 10, "IIM": 15, "HNLU": 5, "Nawagaon": 10, "Military Station": 10, "Stadium": 10, "Satya Sai Hospital": 5, "Sector 17": 5, "Balco Medical Centre": 5, "Jungle Safari": 10, "HNLU gate": 10, "IIIT": 5, "Muktangan": 5, "Sector 22": 0, "CBD Railway Station": 5, "Office Complex Block A B": 5, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "CBD Railway Station": {
+                    "Raipur Railway Station": 30, "DKS Bhawan": 30, "Telibandha": 25, "Agriculture College": 20, "Sector 15": 5, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 5, "Sector 30": 10, "IIM": 15, "HNLU": 5, "Nawagaon": 10, "Military Station": 10, "Stadium": 10, "Satya Sai Hospital": 5, "Sector 17": 5, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 10, "Sector 22": 5, "CBD Railway Station": 0, "Office Complex Block A B": 5, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 15, "Thanaud": 15, "NH 30 Chowk": 15
+                },
+                "Office Complex Block A B": {
+                    "Raipur Railway Station": 30, "DKS Bhawan": 30, "Telibandha": 25, "Agriculture College": 20, "Sector 15": 5, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 5, "Sector 30": 10, "IIM": 15, "HNLU": 5, "Nawagaon": 10, "Military Station": 10, "Stadium": 10, "Satya Sai Hospital": 5, "Sector 17": 5, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 10, "Sector 22": 5, "CBD Railway Station": 5, "Office Complex Block A B": 0, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 15, "Thanaud": 15, "NH 30 Chowk": 15
+                },
+                "Mantri Aawas": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 30, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 5, "Indravati Bhawan": 5, "South Block": 5, "Sector 27": 5, "Sector 29": 5, "Sector 30": 10, "IIM": 15, "HNLU": 10, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 15, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 0, "Rakhi village": 5, "Sector 27-29 Mid": 5, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Rakhi village": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 40, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 5, "Sector 29": 5, "Sector 30": 10, "IIM": 15, "HNLU": 10, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 15, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 5, "Rakhi village": 0, "Sector 27-29 Mid": 5, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Sector 27-29 Mid": {
+                    "Raipur Railway Station": 40, "DKS Bhawan": 40, "Telibandha": 30, "Agriculture College": 25, "Sector 15": 10, "CBD": 5, "Ekatm path": 5, "North Block": 5, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 5, "Sector 29": 5, "Sector 30": 10, "IIM": 15, "HNLU": 10, "Nawagaon": 15, "Military Station": 15, "Stadium": 15, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 15, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 10, "Office Complex Block A B": 10, "Mantri Aawas": 5, "Rakhi village": 5, "Sector 27-29 Mid": 0, "Rawatpura Sarkar University": 10, "Thanaud": 10, "NH 30 Chowk": 10
+                },
+                "Rawatpura Sarkar University": {
+                    "Raipur Railway Station": 45, "DKS Bhawan": 40, "Telibandha": 35, "Agriculture College": 30, "Sector 15": 15, "CBD": 10, "Ekatm path": 10, "North Block": 10, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 10, "Sector 30": 15, "IIM": 20, "HNLU": 15, "Nawagaon": 20, "Military Station": 20, "Stadium": 20, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 15, "Office Complex Block A B": 15, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 0, "Thanaud": 5, "NH 30 Chowk": 5
+                },
+                "Thanaud": {
+                    "Raipur Railway Station": 45, "DKS Bhawan": 40, "Telibandha": 35, "Agriculture College": 30, "Sector 15": 15, "CBD": 10, "Ekatm path": 10, "North Block": 10, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 10, "Sector 30": 15, "IIM": 20, "HNLU": 15, "Nawagaon": 20, "Military Station": 20, "Stadium": 20, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 15, "Office Complex Block A B": 15, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 5, "Thanaud": 0, "NH 30 Chowk": 5
+                },
+                "NH 30 Chowk": {
+                    "Raipur Railway Station": 45, "DKS Bhawan": 40, "Telibandha": 35, "Agriculture College": 30, "Sector 15": 15, "CBD": 10, "Ekatm path": 10, "North Block": 10, "Mahanadi Bhawan": 10, "Indravati Bhawan": 10, "South Block": 10, "Sector 27": 10, "Sector 29": 10, "Sector 30": 15, "IIM": 20, "HNLU": 15, "Nawagaon": 20, "Military Station": 20, "Stadium": 20, "Satya Sai Hospital": 10, "Sector 17": 10, "Balco Medical Centre": 10, "Jungle Safari": 15, "HNLU gate": 15, "IIIT": 10, "Muktangan": 15, "Sector 22": 10, "CBD Railway Station": 15, "Office Complex Block A B": 15, "Mantri Aawas": 10, "Rakhi village": 10, "Sector 27-29 Mid": 10, "Rawatpura Sarkar University": 5, "Thanaud": 5, "NH 30 Chowk": 0
+                }
+            };
+            
+            const stopNames = Object.keys(fareData);
+            
+            function populateSelects() {
+                stopNames.forEach(stop => {
+                    const option1 = document.createElement('option');
+                    option1.value = stop;
+                    option1.textContent = stop;
+                    sourceStopSelect.appendChild(option1);
+
+                    const option2 = document.createElement('option');
+                    option2.value = stop;
+                    option2.textContent = stop;
+                    destinationStopSelect.appendChild(option2);
+                });
+            }
+
+            function showPage(pageId) {
+                pageContents.forEach(page => {
+                    page.classList.remove('active');
+                });
+                document.getElementById(pageId).classList.add('active');
+            }
+
+            // Event Listeners
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const pageId = tab.getAttribute('data-page');
+                    showPage(pageId);
+                });
+            });
+
+            calculateBtn.addEventListener('click', () => {
+                const source = sourceStopSelect.value;
+                const destination = destinationStopSelect.value;
+
+                if (source && destination) {
+                    const fare = fareData[source][destination];
+                    if (fare !== undefined) {
+                        fareResultDiv.textContent = `Estimated Fare: ₹${fare}`;
+                    } else {
+                        fareResultDiv.textContent = "Fare not found. Please select valid stops.";
+                    }
+                } else {
+                    fareResultDiv.textContent = "Please select both source and destination stops.";
+                }
+            });
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const contactNumber = document.getElementById('contact-number').value;
+                const email = document.getElementById('email').value;
+                const feedback = document.getElementById('feedback').value;
+
+                // Simple alert for feedback submission
+                const messageBox = document.createElement('div');
+                messageBox.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50';
+                messageBox.innerHTML = `
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <p class="text-lg font-bold text-gray-800">Thank You, ${name}!</p>
+                        <p class="mt-2 text-gray-600">Your feedback has been submitted successfully.</p>
+                        <button onclick="this.closest('.fixed').remove()" class="mt-4 bg-green-800 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-700 transition-colors">
+                            Close
+                        </button>
+                    </div>
+                `;
+                document.body.appendChild(messageBox);
+                
+                contactForm.reset();
+            });
+
+            // Initial population and page setup
+            populateSelects();
+            showPage('home');
+        });
+    </script>
+
+</body>
+</html>
